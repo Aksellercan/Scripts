@@ -6,25 +6,26 @@ touchpad:
     - type: swipe
       fingers: 3
       direction: left_right
+      speed: slow
 
       actions:
         - on: begin
           input:
-            - keyboard: [ +leftalt ]
-            - keyboard: [ +tab ]
+            - keyboard: [ +leftalt, tab ]
+
         - on: update
-          interval: 10
+          interval: -75
+          input:
+            - keyboard: [ leftshift+tab ]
+
+        - on: update
+          interval: 75
           input:
             - keyboard: [ tab ]
-        - on: update
-          interval: -10
-          input:
-            - keyboard: [ tab ]
-            - keyboard: [ leftshift ]
+
         - on: end_cancel
           input:
             - keyboard: [ -leftalt ]
-            - keyboard: [ -tab ]
 
     # Show Overview / global
     - type: swipe
@@ -47,12 +48,28 @@ touchpad:
     # Next Song / global
     # - type: swipe
     #   fingers: 4
-    #   direction: down
+    #   direction: up
     #
     #   actions:
     #     - on: begin
     #       input:
     #         - keyboard: [ nextsong ]
+
+    # Maximize Window / global
+    - type: pinch
+      fingers: 3
+      direction: out
+
+      actions:
+        - plasma_shortcut: kwin,Window Maximize
+
+    # Minimize Window / global
+    - type: pinch
+      fingers: 3
+      direction: in
+
+      actions:
+        - plasma_shortcut: kwin,Window Minimize
 
     # Previous Song / global
     - type: swipe
@@ -72,3 +89,4 @@ touchpad:
         - on: begin
           input:
             - keyboard: [ playpause ]
+
