@@ -8,16 +8,11 @@
         }
     },
     "modules": [
-		"break",
 		{
 			"type": "title",
 			"key": "HostName",
 			"keyColor": "green"
 		},
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌──────────────────────────────Hardware──────────────────────────────┐"
-        },
         {
             "type": "host",
             "key": "Laptop",
@@ -25,53 +20,45 @@
         },
 		{
 			"type": "os",
-			"key": "├OS",
-			"keyColor": "blue"
-		},
-		{
-			"type": "terminal",
-			"key": "├Terminal",
+			"key": "├ OS",
 			"keyColor": "blue"
 		},
 		{
 			"type": "shell",
-			"key": "├Shell",
+			"key": "├ Shell",
 			"keyColor": "blue"
 		},
+		{
+			"type": "terminal",
+			"key": "├ Terminal",
+			"keyColor": "blue"
+		},	
         {
             "type": "cpu",
-            "key": "├CPU",
+            "key": "├ CPU",
             "keyColor": "blue"
         },
         {
             "type": "gpu",
-            "key": "├GPU",
+            "key": "├ GPU",
             "keyColor": "blue"
         },
         {
             "type": "memory",	
-            "key": "├Memory",
+            "key": "├ Memory",
             "keyColor": "blue"
         },
 		{
 			"type": "swap",
-			"key": "├Swap",
+			"key": "├ Swap",
 			"keyColor": "blue"
 		},
         {
             "type": "disk",
-            "key": "└Disk",
+            "key": "└ Disk",
             "keyColor": "blue"
         },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────────────────────┘"
-        },
         "break",
-        {
-            "type": "custom",
-            "format": "\u001b[90m┌───────────────────────Age / Uptime / Packages──────────────────────┐"
-        },
         {
             "type": "command",
             "key": "  OS Age ",
@@ -87,10 +74,6 @@
             "type": "packages",
             "key": "  Packages ",
            "keyColor": "yellow"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────────────────────┘"
         },
         {
             "type": "colors",

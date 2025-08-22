@@ -1,0 +1,74 @@
+touchpad:
+  buttonpad: false
+  gestures:
+
+    #traverse open windows / global
+    - type: swipe
+      fingers: 3
+      direction: left_right
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ +leftalt ]
+            - keyboard: [ +tab ]
+        - on: update
+          interval: 10
+          input:
+            - keyboard: [ tab ]
+        - on: update
+          interval: -10
+          input:
+            - keyboard: [ tab ]
+            - keyboard: [ leftshift ]
+        - on: end_cancel
+          input:
+            - keyboard: [ -leftalt ]
+            - keyboard: [ -tab ]
+
+    # Show Overview / global
+    - type: swipe
+      fingers: 3
+      direction: up
+
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Overview
+
+    # Show Desktop / global
+    - type: swipe
+      fingers: 3
+      direction: down
+
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Show Desktop
+
+    # Next Song / global
+    # - type: swipe
+    #   fingers: 4
+    #   direction: down
+    #
+    #   actions:
+    #     - on: begin
+    #       input:
+    #         - keyboard: [ nextsong ]
+
+    # Previous Song / global
+    - type: swipe
+      fingers: 4
+      direction: down
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ previoussong ]
+
+    # mute / global
+    - type: press
+      fingers: 4
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ playpause ]
