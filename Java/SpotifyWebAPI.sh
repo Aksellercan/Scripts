@@ -1,3 +1,3 @@
 #! /bin/bash
-cd '/home/aksell/Documents/Other Documents/Programs/Java Programs/personalSpotifyWebAPI'
-java -jar SpotifyWebAPI.jar
+cd '/home/aksell/Documents/Programs/Java Programs/SpotifyWebAPI/3.0'
+java -jar SpotifyWebAPI-3.0.jar --auto-mode
