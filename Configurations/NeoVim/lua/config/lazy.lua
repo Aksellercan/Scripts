@@ -24,8 +24,11 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-	{ 'nvim-mini/mini.statusline', version = false },
-    -- import your plugins
+	{ 'nvim-mini/mini.statusline', version = false }, 
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, },
+	{"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+	-- import your plugins
     { import = "plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.
