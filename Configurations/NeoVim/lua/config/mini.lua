@@ -12,5 +12,5 @@ require('mini.statusline').setup({
 
   	-- Whether to use icons by default
   	use_icons = true,
-	}	
+	}
 })

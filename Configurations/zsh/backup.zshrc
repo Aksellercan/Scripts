@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="alanpeabody"
+#ZSH_THEME="alanpeabody" # other theme
+ZSH_THEME="risto"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -125,4 +126,15 @@ SAVEHIST=1000
 bindkey -v
 
 #User Paths
-export PATH="$HOME/Library/flutter_linux_3.32.5-stable/flutter/bin:$PATH"
+export PATH="$HOME/Library/Binaries/flutter_linux_3.32.5-stable/flutter/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# Run command on startup
+fastfetch
+"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
+"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list in-progress
+
+# Set aliases
+alias vim="nvim"
+alias btop="bpytop"
+alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTrackerCLI"

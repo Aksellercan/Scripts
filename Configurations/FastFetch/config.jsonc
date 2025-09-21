@@ -10,69 +10,69 @@
     "modules": [
 		{
 			"type": "title",
-			"key": "HostName",
+			"key": "HostName\t",
 			"keyColor": "green"
 		},
         {
             "type": "host",
-            "key": "Laptop",
+            "key": "Laptop\t",
             "keyColor": "blue"
         },
 		{
 			"type": "os",
-			"key": "├ OS",
+			"key": "* OS\t",
 			"keyColor": "blue"
 		},
 		{
 			"type": "shell",
-			"key": "├ Shell",
+			"key": "* Shell\t",
 			"keyColor": "blue"
 		},
 		{
 			"type": "terminal",
-			"key": "├ Terminal",
+			"key": "* Terminal\t",
 			"keyColor": "blue"
 		},	
         {
             "type": "cpu",
-            "key": "├ CPU",
+            "key": "* CPU\t",
             "keyColor": "blue"
         },
         {
             "type": "gpu",
-            "key": "├ GPU",
+            "key": "* GPU\t",
             "keyColor": "blue"
         },
         {
             "type": "memory",	
-            "key": "├ Memory",
+            "key": "* Memory\t",
             "keyColor": "blue"
         },
 		{
 			"type": "swap",
-			"key": "├ Swap",
+			"key": "* Swap\t",
 			"keyColor": "blue"
 		},
         {
             "type": "disk",
-            "key": "└ Disk",
+            "key": "* Disk\t",
             "keyColor": "blue"
         },
-        "break",
+		"break",
         {
             "type": "command",
-            "key": "  OS Age ",
+            "key": "=> OS Age\t",
             "keyColor": "yellow",
             "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
         },
         {
             "type": "uptime",
-            "key": "  Uptime ",
+            "key": "=> Uptime\t",
             "keyColor": "yellow"
 		},
         {
             "type": "packages",
-            "key": "  Packages ",
+            "key": "=> Packages",
            "keyColor": "yellow"
         },
         {
