@@ -70,11 +70,16 @@
             "key": "=> Uptime\t",
             "keyColor": "yellow"
 		},
-        {
-            "type": "packages",
-            "key": "=> Packages",
-           "keyColor": "yellow"
-        },
+		{
+			"type": "localip",
+			"key": "=> Local IP",
+			"keyColor": "yellow"
+		},
+		{
+			"type": "packages",
+			"key": "=> Packages",
+			"keyColor": "yellow"
+		},
         {
             "type": "colors",
             "paddingLeft": 2,
