@@ -44,16 +44,16 @@ touchpad:
       actions:
         - on: begin
           plasma_shortcut: kwin,Show Desktop
-
+    
     # Next Song / global
-    # - type: swipe
-    #   fingers: 4
-    #   direction: up
-    #
-    #   actions:
-    #     - on: begin
-    #       input:
-    #         - keyboard: [ nextsong ]
+    - type: swipe
+      fingers: 4
+      direction: up
+
+      actions:
+        - on: begin
+          input:
+            - keyboard: [ nextsong ]
 
     # Maximize Window / global
     - type: pinch
