@@ -1,0 +1,12 @@
+ack
+anydesk-bin
+google-chrome
+inputactions-kwin
+jetbrains-toolbox
+minecraft-launcher
+multimc-bin
+paru
+paru-debug
+pipes.sh
+visual-studio-code-bin
+zen-browser-bin
