@@ -125,7 +125,7 @@ SAVEHIST=1000
 #bindkey mode
 bindkey -v
 
-#User Paths
+# User Paths
 export PATH="$HOME/Library/Binaries/flutter_linux_3.32.5-stable/flutter/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 
@@ -141,4 +141,6 @@ alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTr
 alias HTTPServer="java -jar $HOME/Documents/Programs/Java\ Programs/HTTPServer/HTTPServer.jar"
 alias SpotifyWebAPI="java -jar $HOME/Documents/Programs/Java\ Programs/SpotifyWebAPI/3.0/SpotifyWebAPI-3.0.jar"
 
+# Zsh addons
+## Zsh Syntax Highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
