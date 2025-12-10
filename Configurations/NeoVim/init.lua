@@ -1,4 +1,6 @@
 require("cloudberrynvim")
 require("config.lazy")
 require("config.mini")
-require('Comment').setup()
+require("config.filetree")
+require("config.autocmds")
+print("I use nvim btw")

@@ -24,10 +24,6 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-	{'numToStr/Comment.nvim', opts = {
-		-- add any options here
-		}
-	},
 	{ 'nvim-mini/mini.statusline', version = '*' },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, },
 	{"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
