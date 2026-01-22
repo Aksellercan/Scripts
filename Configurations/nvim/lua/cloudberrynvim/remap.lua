@@ -1,8 +1,8 @@
 vim.g.mapleader = ","
 vim.keymap.set("n", "<leader>w", vim.cmd.wa)
 vim.keymap.set("n", "<leader>e",vim.cmd.Ex)
-vim.keymap.set("n", "<leader>q", vim.cmd.qa)
-vim.keymap.set("n", "<leader>wq", vim.cmd.wqa)
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>wq", vim.cmd.wq)
 vim.keymap.set("n", "<leader>u", vim.cmd.u)
 vim.keymap.set("n", "<leader>t", vim.cmd.terminal)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)

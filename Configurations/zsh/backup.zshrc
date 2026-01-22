@@ -112,7 +112,7 @@ zstyle ':completion:*' format 'Did you mean these? %d'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
-zstyle :compinstall filename '/home/aksell/.zshrc'
+zstyle :compinstall filename '/Users/aksell/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -125,10 +125,6 @@ SAVEHIST=1000
 #bindkey mode
 bindkey -v
 
-# User Paths
-export PATH="$HOME/Library/Binaries/flutter_linux_3.32.5-stable/flutter/bin:$PATH"
-export PATH="$HOME/.dotnet/tools:$PATH"
-
 # Run command on startup
 fastfetch
 "$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
@@ -136,11 +132,35 @@ fastfetch
 
 # Set aliases
 alias vim="nvim"
-alias btop="bpytop"
 alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTrackerCLI"
 alias HTTPServer="java -jar $HOME/Documents/Programs/Java\ Programs/HTTPServer/HTTPServer.jar"
 alias SpotifyWebAPI="java -jar $HOME/Documents/Programs/Java\ Programs/SpotifyWebAPI/3.0/SpotifyWebAPI-3.0.jar"
+alias dc="cd .."
+alias raminfo="free -h --si -w"
+alias clearcache="paru -Sccd"
+alias connectDB="mariadb -h 192.168.1.11 -u aksell -p"
+alias attach-tmux="tmux attach -t "
+alias brew-update-and-upgrade="brew update && brew upgrade && brew update"
 
 # Zsh addons
 ## Zsh Syntax Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Functions
+
+# SSH shortcut
+# Usage: komp {hostname or local address}
+komp() {
+    if [[ $# = 1 ]]; then
+        if [[ $1 == *"@"* ]]; then
+            ssh $1
+            return 0
+        fi
+        local user=$(whoami)
+        ssh $user@$1
+    elif [[ $# = 2 ]]; then
+        ssh $1@$2
+    else
+        echo "1 or 2 arguments expected:\n1 argument uses whoami command:\n\tTarget computer hostname or local address\n2 arguments requires you to provide username and (hostname/local address)\n\tTarget computer username and hostname or local address with spaces"
+    fi
+}
