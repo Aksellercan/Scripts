@@ -8,8 +8,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="alanpeabody" # other theme
-ZSH_THEME="risto"
+
+# Old favorite
+#ZSH_THEME="alanpeabody"
+# Best looking one
+#ZSH_THEME="risto"
+# Shortest with enough information
+ZSH_THEME="gallois"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,6 +132,8 @@ bindkey -v
 
 # Run command on startup
 fastfetch
+echo ":: Tmux Windows:"
+tmux ls
 "$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
 "$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list in-progress
 
@@ -159,6 +166,11 @@ komp() {
     elif [[ $# = 2 ]]; then
         ssh $1@$2
     else
-        echo "1 or 2 arguments expected:\n1 argument uses whoami command:\n\tTarget computer hostname or local address\n2 arguments requires you to provide username and (hostname/local address)\n\tTarget computer username and hostname or local address with spaces"
+        local user=$(whoami)
+        ssh $user@nectarine    
     fi
 }
+
+# Append
+## Haskell tooling
+[ -f "/Users/aksell/.ghcup/env" ] && . "/Users/aksell/.ghcup/env" # ghcup-env
