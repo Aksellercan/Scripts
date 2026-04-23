@@ -3,88 +3,56 @@
     "logo": {
         "type": "small",
         "padding": {
-            "top": 6,
-            "left": 3
+                   "top": 1,
+                   "left": 1,
+                   "right": 2
         }
     },
     "modules": [
-		{
-			"type": "title",
-			"key": "HostName\t",
+    	{
+			"type": "host",
+			"key": "Host",
 			"keyColor": "green"
 		},
         {
-            "type": "host",
-            "key": "Laptop\t",
-            "keyColor": "blue"
-        },
-		{
-			"type": "os",
-			"key": "* OS\t",
-			"keyColor": "blue"
+            "type": "uptime",
+            "key": "Uptime",
+            "keyColor": "green"
 		},
 		{
 			"type": "shell",
-			"key": "* Shell\t",
-			"keyColor": "blue"
+			"key": "Shell",
+			"keyColor": "green"
 		},
 		{
 			"type": "terminal",
-			"key": "* Terminal\t",
-			"keyColor": "blue"
-		},	
-        {
-            "type": "cpu",
-            "key": "* CPU\t",
-            "keyColor": "blue"
-        },
-        {
-            "type": "gpu",
-            "key": "* GPU\t",
-            "keyColor": "blue"
-        },
+			"key": "Terminal",
+			"keyColor": "green"
+		},
         {
             "type": "memory",	
-            "key": "* Memory\t",
-            "keyColor": "blue"
+            "key": "Memory",
+            "keyColor": "green"
         },
 		{
 			"type": "swap",
-			"key": "* Swap\t",
-			"keyColor": "blue"
+			"key": "Swap",
+			"keyColor": "green"
 		},
         {
             "type": "disk",
-            "key": "* Disk\t",
-            "keyColor": "blue"
+            "key": "Disk",
+            "keyColor": "green"
         },
-		"break",
-        {
-            "type": "command",
-            "key": "=> OS Age\t",
-            "keyColor": "yellow",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-        },
-        {
-            "type": "uptime",
-            "key": "=> Uptime\t",
-            "keyColor": "yellow"
-		},
 		{
 			"type": "localip",
-			"key": "=> Local IP",
-			"keyColor": "yellow"
+			"key": "Local IP",
+			"keyColor": "green"
 		},
 		{
 			"type": "packages",
-			"key": "=> Packages",
-			"keyColor": "yellow"
-		},
-        {
-            "type": "colors",
-            "paddingLeft": 2,
-            "symbol": "square"
-        }
- 
+			"key": "Packages",
+			"keyColor": "green"
+		}
     ]
 }
