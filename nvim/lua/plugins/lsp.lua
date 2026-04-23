@@ -20,7 +20,7 @@ return {
 			vim.diagnostic.config({
   				virtual_text = true
 			})
-			vim.lsp.enable("ts_ls")
+			vim.lsp.enable("tsserver")
 		end,
 	}
 }
