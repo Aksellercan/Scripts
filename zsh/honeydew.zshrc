@@ -1,7 +1,16 @@
+# Helpful variables
+
+# Colour text
+RED='\033[0;31m'
+BLUE='\e[1;34m'
+LIGHT_BLUE='\e[1;36m'
+NC='\033[0m' # No Color
+RESET='\e[0m'
+
 # ZSH configuration
 
 # Base Configuration
-# Colouring
+# Colouring shell
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
@@ -28,11 +37,9 @@ bindkey -v
 
 # Personal & plugin Configurations
 # Run commands on startup
-#fastfetch
-#echo ":: Tmux Windows:"
-#tmux ls
-#"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
-#"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list in-progress
+echo -e "$LIGHT_BLUE::$RESET Tmux Windows:"
+tmux ls
+"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
 
 # Set aliases
 alias zshconfig="$EDITOR ~/.zshrc"
@@ -41,14 +48,15 @@ alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTr
 alias HTTPServer="java -jar $HOME/Documents/Programs/Java\ Programs/HTTPServer/HTTPServer.jar"
 alias SpotifyWebAPI="java -jar $HOME/Documents/Programs/Java\ Programs/SpotifyWebAPI/3.0/SpotifyWebAPI-3.0.jar"
 alias dc="cd .."
-alias connectDB="mariadb -h 192.168.1.11 -u aksell -p"
+alias connectDB="mariadb -h nectarine -u aksell -p"
 alias attach-tmux="tmux attach -t "
-alias brew_update-and-upgrade="brew update && brew upgrade && brew update"
+alias brew_update-and-upgrade="brew update && brew upgrade"
 alias countLines="java -jar $HOME/Documents/Programs/Java\ Programs/RecursiveLineCounter/RecursiveLineCounter.jar"
 
 # ZSH Addons
 ## Zsh Syntax Highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ## Zsh auto suggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
