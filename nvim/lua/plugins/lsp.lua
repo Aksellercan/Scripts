@@ -15,12 +15,12 @@ return {
   			},
 		},
 		config = function()
-			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("clangd")
-			vim.diagnostic.config({
-  				virtual_text = true
-			})
-			vim.lsp.enable("tsserver")
-		end,
-	}
+            vim.lsp.enable("lua_ls")
+            vim.lsp.enable("clangd")
+            vim.diagnostic.config({
+                virtual_text = true
+            })
+            vim.lsp.enable("tsserver")
+        end,
+    }
 }
