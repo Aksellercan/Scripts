@@ -41,16 +41,28 @@ bindkey -v
 # Run command on startup
 #fastfetch
 echo -e "$LIGHT_BLUE::$RESET Tmux Windows:"
-tmux ls
+local tmux_ls=$(tmux ls)
+echo $tmux_ls
 # My task tracker program
 "$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
 #"$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list in-progress
+
+# Check and attach to already existing tmux session
+
+local sessions=$(echo $tmux_ls | cut -d ':' -f 1);
+local current_stat=$(echo $tmux_ls | grep "attached" | cut -d ':' -f 1)
+if [[ $current_stat = $session ]]; then
+    tmux attach -t ${sessions[1]}
+fi
+
+
 
 # Set aliases
 alias vim="nvim"
 alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTrackerCLI"
 alias HTTPServer="java -jar $HOME/Documents/Programs/Java\ Programs/HTTPServer/HTTPServer.jar"
 alias SpotifyWebAPI="java -jar $HOME/Documents/Programs/Java\ Programs/SpotifyWebAPI/SpotifyWebAPI-3.0.jar"
+alias ls="ls -l --color"
 alias dc="cd .."
 alias connectDB="mariadb -u aksell -p"
 alias attach-tmux="tmux attach -t "
