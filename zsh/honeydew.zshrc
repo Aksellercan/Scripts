@@ -12,13 +12,17 @@ RESET='\e[0m'
 # Base Configuration
 # Colouring shell
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# Minimal
+#PS1="%B%{$fg[red]%}[%{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# Dense
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # COMPINSTALL Config
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' format 'Did you mean these? %d'
+zstyle ':completion:*' format 'Did you mean: %d'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
@@ -38,8 +42,16 @@ bindkey -v
 # Personal & plugin Configurations
 # Run commands on startup
 echo -e "$LIGHT_BLUE::$RESET Tmux Windows:"
-tmux ls
+local tmux_ls=$(tmux ls)
+echo $tmux_ls
 "$HOME/Documents/Programs/C Programs/TaskTrackerCLI/TaskTrackerCLI" list todo
+
+# Check and attach to already existing tmux session
+local sessions=$(echo $tmux_ls | cut -d ':' -f 1);
+local current_stat=$(echo $tmux_ls | grep "attached" | cut -d ':' -f 1)
+if [[ $current_stat = $session ]]; then
+    tmux attach -t ${sessions[1]}
+fi
 
 # Set aliases
 alias zshconfig="$EDITOR ~/.zshrc"
@@ -48,9 +60,15 @@ alias TaskTrackerCLI="$HOME/Documents/Programs/C\ Programs/TaskTrackerCLI/TaskTr
 alias HTTPServer="java -jar $HOME/Documents/Programs/Java\ Programs/HTTPServer/HTTPServer.jar"
 alias SpotifyWebAPI="java -jar $HOME/Documents/Programs/Java\ Programs/SpotifyWebAPI/3.0/SpotifyWebAPI-3.0.jar"
 alias dc="cd .."
+
+# ls alias
+alias ls="ls -l --color"
+
+# Database connection alias
 alias connectDB="mariadb -h nectarine -u aksell -p"
+
 alias attach-tmux="tmux attach -t "
-alias brew_update-and-upgrade="brew update && brew upgrade"
+alias update_all_brew="brew update && brew upgrade && brew cleanup"
 alias countLines="java -jar $HOME/Documents/Programs/Java\ Programs/RecursiveLineCounter/RecursiveLineCounter.jar"
 
 # ZSH Addons
@@ -73,7 +91,7 @@ komp() {
         local user=$(whoami)
         ssh $user@$1
     elif [[ $# = 2 ]]; then
-        ssh $1@$2
+        ssh $(whoami)@$2
     else
         local user=$(whoami)
         ssh $user@nectarine    
